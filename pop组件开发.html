@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="./css/diaLog.css">
+	</head>
+
+	<body>
+		<input type="button" name="" id="login" value="提示框" />
+		<input type="button" name="" id="news" value="公告框" />
+		<input type="button" name="" id="ad" value="广告框" />
+		<div class="load"></div>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/diaLog.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#login').click(function() {
+					//弹出登录框：w300 h400 居中显示
+					var d1 = new DiaLog();
+					d1.init({
+						'iNow': 1,
+						'title': '提示',
+						'content':'我是内容',
+						'iconText':"fgdfg",
+						'confirm': function(res) {
+							console.log(res)
+						},
+						'cancle': function(res) {
+							console.log(res)
+						},
+						'layer':true
+					});
+					
+				});
+				$('#news').click(function() {
+					//弹出公告框：w200 h200 右显示
+					var d2 = new DiaLog();
+					d2.init({
+						'iNow': 2,
+						'width': 200,
+						'height': 200,
+						'content':'我是内容鸭',
+						'position': 'right',
+						'title': '公告框'
+					});
+				});
+				$('#ad').click(function() {
+					//跳出广告框：w200 h400 右下显示
+					var d3 = new DiaLog();
+					d3.init({
+						'iNow': 3,
+						'width': 200,
+						'height': 400,
+						'position': 'rightbottom',
+						'title': '广告框'
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>
